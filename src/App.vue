@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <Header :cart="cart" :currency="currency"></Header>
-    <List :currency="currency"/>
-    <Cart :cart="cart"/>
+    <List :currency="currency" />
+    <Cart :cart="cart" />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import List from './components/List.vue';
-import Cart from './components/Cart.vue';
+import Header from "./components/Header.vue";
+import List from "./components/List.vue";
+import Cart from "./components/Cart.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       cart: [],
-      currency: 'VGTB',
+      currency: "VGTB",
     };
   },
   components: {
@@ -24,7 +24,7 @@ export default {
     List,
     Cart,
   },
-}
+};
 </script>
 
 <style>
@@ -38,7 +38,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   color: #2c3e50;
 }
 </style>

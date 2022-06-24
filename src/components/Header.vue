@@ -1,11 +1,12 @@
 <script>
 export default {
-  name: 'Header',
+  name: "Header",
+  // required и default объявлены в пустую
+  // Здесь нужно установить , что props required и default
   props: {
     cart: Array,
     required: true,
-    default: {},
-
+    default: {}, // default следует быть массивом
     currency: String,
   },
   data() {
@@ -14,7 +15,9 @@ export default {
     };
   },
   watch: {
+    // Можно просто сart и this
     cart(cart) {
+      // Быстрее прибавить к корзине, чем постояннно использовать цикл
       let val = 0;
       cart.forEach((item) => {
         val += item.price * item.amount;
@@ -22,14 +25,15 @@ export default {
       this.cartPrice = val;
     },
   },
-}
+};
 </script>
 
 <style scoped>
-  .header {
-    padding: 10px;
-    background: #e5e5e5;
-  }
+/* Лучше использовать rem или em, а не пиксили */
+.header {
+  padding: 10px;
+  background: #e5e5e5;
+}
 </style>
 
 <template>
